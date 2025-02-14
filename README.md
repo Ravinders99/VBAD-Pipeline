@@ -55,3 +55,16 @@ python main.py --gpus 0 --video <videos/path_to_npy_file> --label <true_label> -
 ```--untargeted``` mode of the attack   
 ```--sigma``` amount of noise added during the attack process (1e-3 is moderate, 1e-6 is small, 1e-1 is high)
 
+### Exemple Run
+This run is attacking the video ```push_up_260.npy``` with a true label of ```260``` which is equivalent to ```push-up``` classification
+```
+python main.py --gpus 0 --video videos/push_up_260.npy --label 260 --adv-save-path videos/output_video.npy --untargeted --sigma 1e-3
+```
+
+### Notes:
+Depending on the class/label attacked, the method will take more time, since the difficulty is not the same for each one.   
+Exemples:
+- ```193.npy``` will be quick
+- ```push_up_260.npy``` will be longer
+
+**This is also dependant on your GPU**
